@@ -29,5 +29,21 @@ export const tables = [
             {key: 'isMatrim', value: 'סיווג מתרים'}
 
         ]
+    },
+    {
+        key: 'Commits', 
+        value: 'התחייבויות', 
+        fields: [
+            {key: 'id', value: 'מס_התחייבות'},
+            {key: 'description', value: 'התחייבות'},
+            {key: 'dateStart', value: 'מתאריך'},
+            {key: 'dateEnd', value: 'עד_תאריך'},
+            {key: 'toremId', value: 'תז'},
+            {key: 'sum', value: 'סכום_בשח'},
+            {key: 'currnty', value: 'מטבע'},
+            {key: 'shahar', value: 'שער'},
+            {key: 'codeMatrim', value: 'קוד מתרים'},
+            {key: 'itra', value: 'יתרה'}
+        ]
     }
 ]
