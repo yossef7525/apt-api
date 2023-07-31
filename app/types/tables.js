@@ -45,5 +45,23 @@ export const tables = [
             {key: 'codeMatrim', value: 'קוד מתרים'},
             {key: 'itra', value: 'יתרה'}
         ]
+    },
+    {
+        key: 'CommitsDetails', 
+        value: 'פרטי_התחייבות', 
+        fields: [
+            {key: 'id', value: 'מס סידורי'},
+            {key: 'commitId', value: 'מס_תנועה'},
+            {key: 'date', value: 'תאריך ערך'},
+            {key: 'dateHe', value: 'תאריך עברי'},
+            {key: 'toremId', value: 'תז'},
+            {key: 'sum', value: 'סכום'},
+            {key: 'dolar', value: 'דולר'},
+            {key: 'currnty', value: 'מטבע'},
+            {key: 'shahar', value: 'שער'},
+            {key: 'paymentNum', value: 'מתוך'},
+            {key: 'totalPayments', value: 'מס_תשלום'},
+            {key: 'itra', value: 'יתרה'}
+        ]
     }
 ]
