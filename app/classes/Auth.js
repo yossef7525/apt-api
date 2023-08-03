@@ -1,19 +1,27 @@
+import { Tables } from "../types/enums.js";
 import { AptContent } from "./AptContent.js";
 import Jwt from 'jsonwebtoken'
 
 export class Auth {
     loginUser(userName, Password) {
-        const users = new AptContent(process.env.PATH_MDB).search("Alphon", true, "isMatrim");
-        console.log(users);
-        const user = users.find(u => u.id === Password && u.firstName === userName);
+        const user = new AptContent(process.env.PATH_MDB)
+            .filterContent(
+                Tables.Alphon,
+                [
+                    { value: true, field: "isMatrim" },
+                    { value: userName, field: "firstName" },
+                    { value: Password, field: "id" },
+                ]
+            )[0];
+
         if (user) {
-           const token = Jwt.sign({
+            const token = Jwt.sign({
                 user: userName,
                 code: Password
             }, process.env.TOKEN_KEY, { algorithm: 'HS256' })
-            return token;
+            return { user, token };
         }
         return false;
     }
-    
+
 }

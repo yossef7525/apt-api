@@ -57,6 +57,22 @@ export class AptContent {
         const data = this.getContentByTableName(tableName)
         return data.filter(d => d[field] === query)
     }
+
+    /**
+     * 
+     * @param {string} tableName the table key for the table in APT softwhere
+     * @param {{value: any, field:string}[]} query The query that needs to be filtered from the table
+     * @returns {{[x:string]: value}[]}
+     */
+    filterContent(tableName, query) {
+        const data = this.getContentByTableName(tableName)
+        let dataFiltered = data
+        query.forEach(q => {
+          dataFiltered =  dataFiltered.filter(row => row[q.field] === q.value)
+        })
+        return dataFiltered
+    }
+
     /**
      * 
      * @param {string} tableName the table key for the table in APT softwhere
