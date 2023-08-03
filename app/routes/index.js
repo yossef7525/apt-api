@@ -11,6 +11,10 @@ router.post('/getQuery', auth, getQuery);
 router.post('/getRange', auth, getRange);
 router.post('/getFilter', auth, getFilter);
 
+import { getCommits } from '../api/commits.controller.js';
+
+router.post('/getCommits', auth, getCommits);
+
 import { login } from '../api/auth.controller.js'
 
 router.post('/login', login);

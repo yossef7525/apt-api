@@ -1,5 +1,6 @@
 import { AptContent } from '../classes/AptContent.js';
 
+
 export function getContent(req, res) {
   const aptContent = new AptContent(process.env.PATH_MDB);
   const { tableName } = req.body;
