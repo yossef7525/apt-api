@@ -9,7 +9,7 @@ export function getCommits(req, res){
 
     commits.forEach(commit => {
         const matches = aptContent.search(Tables.Matches, commit.id, 'commitId')
-        const data = matches.map(m => m.sum);
+        const data = matches.map(m => m.Sum);
         const sum = data.reduce((a,b)=> a+b,0);
         commit.paymented = sum;
         commit.itra = commit.sum - sum

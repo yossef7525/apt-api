@@ -106,9 +106,9 @@ export const tables = [
         fields: [
             {key: 'trumaId', value: 'truma_num'},
             {key: 'commitId', value: 'commit_num'},
-            {key: 'sum', value: 'sum'},
-            {key: 'inserted', value: 'inserted'},
-            {key: 'dateRow', value: 'dateRow'},
+            {key: 'Sum', value: 'sum'},
+            {key: 'Inserted', value: 'inserted'},
+            {key: 'DateRow', value: 'dateRow'},
         ]
     }
 ]
