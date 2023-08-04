@@ -19,13 +19,13 @@ export class AptContent {
      * @param {string} tableName the table key for the table in APT softwhere
      * @returns {{[x: string]: Value}[]} object keys converted and values from the table
      */
-    getContentByTableName(tableName) {
+    getContentByTableName(tableName, skip) {
 
         const valueTableName = tables.find(t => t.key === tableName).value;
         const fields = tables.find(t => t.key === tableName).fields;
 
         const data = this.reader.getTable(valueTableName)
-            .getData({ columns: fields.map(f => f.value) })
+            .getData({ columns: fields.map(f => f.value) , rowOffset:skip})
         data.forEach(obj => {
             fields.forEach(f => {
                 obj[f.key] = obj[f.value]

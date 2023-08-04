@@ -17,8 +17,8 @@ setTimeout(() => {
                 AlphonState: aptContent.getContentByTableName(Tables.Alphon),
                 CommitsState: aptContent.getContentByTableName(Tables.Commits),
                 CommitsDetailsState: aptContent.getContentByTableName(Tables.CommitsDetails),
-                TrumotState: aptContent.getContentByTableName(Tables.Trumot),
-                TrumotDetailsState: aptContent.getContentByTableName(Tables.TrumotDetails),
+                TrumotState: aptContent.getContentByTableName(Tables.Trumot, 70000),
+                TrumotDetailsState: aptContent.getContentByTableName(Tables.TrumotDetails, 260000),
                 MatchesState: aptContent.getContentByTableName(Tables.Matches)
             }
 
@@ -53,8 +53,8 @@ setInterval(() => {
                 AlphonState: aptContent.getContentByTableName(Tables.Alphon),
                 CommitsState: aptContent.getContentByTableName(Tables.Commits),
                 CommitsDetailsState: aptContent.getContentByTableName(Tables.CommitsDetails),
-                TrumotState: aptContent.getContentByTableName(Tables.Trumot),
-                TrumotDetailsState: aptContent.getContentByTableName(Tables.TrumotDetails),
+                TrumotState: aptContent.getContentByTableName(Tables.Trumot, 70000),
+                TrumotDetailsState: aptContent.getContentByTableName(Tables.TrumotDetails, 260000),
                 MatchesState: aptContent.getContentByTableName(Tables.Matches)
             }
 
