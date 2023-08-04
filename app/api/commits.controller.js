@@ -1,5 +1,7 @@
 import { Tables } from "../types/enums.js";
 import { AptContent } from "../classes/AptContent.js";
+import { AlphonState, TrumotDetailsState } from "../../content/state.maneger.js";
+
 
 ///===========================================================
 /// this function return commits list for torem from all years

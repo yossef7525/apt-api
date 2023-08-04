@@ -2,20 +2,12 @@ import express from 'express';
 const app = express();
 // const apiAdmin = require('./routes/admin/api')
 import bodyParser from 'body-parser';
-import serveStatic from 'serve-static';
-import path, {dirname} from 'path';
 import cors from 'cors'
 import  dotenv from 'dotenv';
 import api from './app/routes/index.js'
-import { fileURLToPath } from 'url';
 import { Auth } from './app/classes/Auth.js';
-import { Worker } from 'worker_threads'
-import{AlphonState,CommitsDetailsState,CommitsState,MatchesState,TrumotDetailsState,TrumotState} from './content/state.maneger.js'
 // const {verifyToken} = require('./auth');
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 dotenv.config();
-
 
 function createRouterMiddlewre() {
     app.use(express.json())
