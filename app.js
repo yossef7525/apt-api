@@ -3,16 +3,21 @@ const app = express();
 // const apiAdmin = require('./routes/admin/api')
 import bodyParser from 'body-parser';
 import serveStatic from 'serve-static';
-import path from 'path';
+import path, {dirname} from 'path';
 import cors from 'cors'
-import {config} from 'dotenv';
+import  dotenv from 'dotenv';
 import api from './app/routes/index.js'
+import { fileURLToPath } from 'url';
 import { Auth } from './app/classes/Auth.js';
+import { Worker } from 'worker_threads'
+import{AlphonState,CommitsDetailsState,CommitsState,MatchesState,TrumotDetailsState,TrumotState} from './content/state.maneger.js'
 // const {verifyToken} = require('./auth');
-config();
-import './content/state.maneger.js'
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+dotenv.config();
 
-function createRouterMiddlewre(){
+
+function createRouterMiddlewre() {
     app.use(express.json())
     app.use(bodyParser.urlencoded({
         parameterLimit: 200000,
@@ -20,7 +25,8 @@ function createRouterMiddlewre(){
         extended: false
     }))
     app.use(cors())
-    app.use('/api',api)
+    app.use('/api', api)
+   
 }
 createRouterMiddlewre()
 const auth = new Auth()

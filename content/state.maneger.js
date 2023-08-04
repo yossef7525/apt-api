@@ -1,4 +1,6 @@
 import { AptContent } from '../app/classes/AptContent.js'
+import { Worker } from 'worker_threads'
+
 import {Tables} from '../app/types/enums.js'
 
 ///==========================
@@ -16,26 +18,22 @@ export let MatchesState = []
 ///function to refresh state
 ///==========================
 export function RefreshData(){
-    if(!process.env.PATH_MDB) return;
-    const aptContent = new AptContent(process.env.PATH_MDB);
-    
-    AlphonState = aptContent.getContentByTableName(Tables.Alphon);
-    CommitsState = aptContent.getContentByTableName(Tables.Commits);
-    CommitsDetailsState = aptContent.getContentByTableName(Tables.CommitsDetails);
-    TrumotState = aptContent.getContentByTableName(Tables.Trumot);
-    TrumotDetailsState  = aptContent.getContentByTableName(Tables.TrumotDetails);
-    MatchesState  = aptContent.getContentByTableName(Tables.Matches);
-
-    console.log('data is refreshed');
-    console.table([
-        {table: Tables.Alphon,length: AlphonState.length},
-        {table: Tables.Commits,length: CommitsState.length},
-        {table: Tables.CommitsDetails,length: CommitsDetailsState.length},
-        {table: Tables.Trumot,length: TrumotState.length},
-        {table: Tables.TrumotDetails,length: TrumotDetailsState.length},
-        {table: Tables.Matches,length: MatchesState.length},
-    ]);
+   
 }
 
-setTimeout(RefreshData, 1000)
+const worker = new Worker('./content/refresh.data.js')
+worker.once('message', (data) => {
+   
+
+        console.log(data);
+    
+    // AlphonState = data.AlphonState
+    // CommitsState = data.CommitsState
+    // CommitsDetailsState = data.CommitsDetailsState
+    // TrumotState = data.TrumotState
+    // TrumotDetailsState = data.TrumotDetailsState
+    // MatchesState = data.MatchesState
+})
+
+// setTimeout(RefreshData, 1000)
 // setInterval(RefreshData, 100000)
