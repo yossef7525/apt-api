@@ -48,7 +48,7 @@ export const tables = [
     },
     {
         key: 'CommitsDetails',
-        value: 'פרטי_התחייבות',
+        value: 'פרטי_התחייבויות',
         fields: [
             { key: 'id', value: 'מס סידורי' },
             { key: 'commitId', value: 'מס_תנועה' },
@@ -84,7 +84,7 @@ export const tables = [
     },
     {
         key: 'TrumotDetails',
-        value: 'פרטי_תרומה',
+        value: 'פרטי תרומה',
         fields: [
             { key: 'id', value: 'מס סידורי' },
             { key: 'trumaId', value: 'מס תרומה' },

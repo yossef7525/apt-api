@@ -10,6 +10,7 @@ import api from './app/routes/index.js'
 import { Auth } from './app/classes/Auth.js';
 // const {verifyToken} = require('./auth');
 config();
+import './content/state.maneger.js'
 
 function createRouterMiddlewre(){
     app.use(express.json())

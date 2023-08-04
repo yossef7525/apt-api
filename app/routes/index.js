@@ -15,6 +15,11 @@ import { getCommits } from '../api/commits.controller.js';
 
 router.post('/getCommits', auth, getCommits);
 
+import { getTormimByMatrimCode, getLastPaymentForTormin } from '../api/tormin.controller.js';
+
+router.post('/getTormimByMatrimCode', auth, getTormimByMatrimCode);
+router.post('/getLastPaymentForTormin', auth, getLastPaymentForTormin);
+
 import { login } from '../api/auth.controller.js'
 
 router.post('/login', login);
