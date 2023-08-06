@@ -4,8 +4,11 @@ import { AlphonState, TrumotDetailsState } from "../../content/state.maneger.js"
 /// this function return all tormim for cuurnet matrim code
 ///========================================================
 export function getTormimByMatrimCode(req, res){
-    const {matrimCode} = req.body;
-    const users = AlphonState.filter(row => row.matrimCode === matrimCode && row.isTorem)
+    const matrimCode = req.user.code;
+    const users = AlphonState.filter(row => row.matrimCode === matrimCode && row.group)
+    users.forEach(user => {
+      user.lastPayment = getLastPaymentById(user.id) 
+    })
     users ? res.status(200).json(users) : res.status(400).json({ message: 'bad request' });
 }
 
