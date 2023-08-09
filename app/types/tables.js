@@ -78,7 +78,7 @@ export const tables = [
             { key: 'currnty', value: 'מטבע' },
             { key: 'shahar', value: 'שער' },
             { key: 'paymentType', value: 'אמצעי תשלום' },
-            { key: 'projectCode', value: 'קוד מבצע' },
+            { key: 'projectCode', value: 'קוד_מבצע' },
             { key: 'matrimCode', value: 'שיוך מתרים' }
         ]
     },
@@ -96,7 +96,6 @@ export const tables = [
             { key: 'currnty', value: 'מטבע' },
             { key: 'shahar', value: 'שער' },
             { key: 'paymentType', value: 'אמצעי פרעון' },
-            { key: 'projectCode', value: 'קוד מבצע' },
             { key: 'matrimCode', value: 'שיוך מתרים' }
         ]
     },
